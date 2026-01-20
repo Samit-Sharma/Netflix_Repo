@@ -1,0 +1,9 @@
+{
+  "monorepoRoot": ".",
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/build",
+  "env": [
+    "REACT_APP_API_URL"
+  ],
+  "framework": "react"
+}
