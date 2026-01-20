@@ -1,9 +1,17 @@
 {
-  "monorepoRoot": ".",
-  "buildCommand": "cd client && npm run build",
-  "outputDirectory": "client/build",
-  "env": [
-    "REACT_APP_API_URL"
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
   ],
-  "framework": "react"
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "client/build/index.html"
+    }
+  ]
 }

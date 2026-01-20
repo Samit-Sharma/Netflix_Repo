@@ -1,17 +1,23 @@
-export const API_END_POINT = "https://netflix-repo.onrender.com/api/v1/user";
+// Backend
+export const API_END_POINT = process.env.REACT_APP_API_URL;
 
-export const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZGJlZjViMDUzNWE3OGYwMjllMTQ0NDE5NTQ4MjM4MCIsInN1YiI6IjY1MDRhMjNkNTllOGE5MDExZWNhYTVjZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LTBaAb_2NPRGPr2HeGszyFDP-onLh-fiL7fzmnOFZUg'
-    }
-  };
-export const Now_Playing_Movie = "https://api.themoviedb.org/3/movie/now_playing";
-export const Popular_Movie = "https://api.themoviedb.org/3/movie/popular";
-export const Top_Rated_Movie = "https://api.themoviedb.org/3/movie/top_rated";
-export const Upcoming_Movie = "https://api.themoviedb.org/3/movie/upcoming";
+// TMDB
+export const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 
-export const  SEARCH_MOVIE_URL="https://api.themoviedb.org/3/search/movie?query=";
+export const Now_Playing_Movie = `${TMDB_BASE_URL}/movie/now_playing`;
+export const Popular_Movie = `${TMDB_BASE_URL}/movie/popular`;
+export const Top_Rated_Movie = `${TMDB_BASE_URL}/movie/top_rated`;
+export const Upcoming_Movie = `${TMDB_BASE_URL}/movie/upcoming`;
+
+export const SEARCH_MOVIE_URL = `${TMDB_BASE_URL}/search/movie`;
 
 export const TMDB_IMG_URL = "https://image.tmdb.org/t/p/w500";
+
+// TMDB headers
+export const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.REACT_APP_TMDB_TOKEN}`
+  }
+};
