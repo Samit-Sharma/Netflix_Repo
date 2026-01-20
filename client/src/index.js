@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import { Provider } from "react-redux";
 import store from './redux/store';
-import axios from "axios";
+// import axios from "axios";
 
-axios.defaults.baseURL = "https://netflix-repo.onrender.com";
-axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "https://netflix-repo.onrender.com";
+// axios.defaults.withCredentials = true;
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
