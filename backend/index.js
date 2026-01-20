@@ -17,6 +17,7 @@ app.use(cookieParser());
 
 const corsOptions = {
   origin: [
+    "https://netflix-repo-kohl.vercel.app",
     "https://netflix-repo-3vpc.vercel.app",
     "https://netflix-repo-3vpc-qsxys6pbb-samit-sharmas-projects.vercel.app",
     "http://localhost:3000"
