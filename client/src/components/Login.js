@@ -40,7 +40,8 @@ const Login = () => {
                 dispatch(setUser(res.data.user));
                 navigate("/browse");
             } catch (error) {
-                toast.error(error.response.data.message);
+                const errorMessage = error.response?.data?.message || error.message || "An error occurred";
+                toast.error(errorMessage);
                 console.log(error);
             } finally {
                 dispatch(setLoading(false));
@@ -61,7 +62,8 @@ const Login = () => {
                 }
                 setIsLogin(true);
             } catch (error) {
-                toast.error(error.response.data.message);
+                const errorMessage = error.response?.data?.message || error.message || "An error occurred";
+                toast.error(errorMessage);
                 console.log(error);
             } finally{
                 dispatch(setLoading(false));

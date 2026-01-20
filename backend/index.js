@@ -16,9 +16,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: "https://netflix-repo-3vpc.vercel.app",
+  origin: [
+    "https://netflix-repo-3vpc.vercel.app",
+    "https://netflix-repo-3vpc-qsxys6pbb-samit-sharmas-projects.vercel.app",
+    "http://localhost:3000"
+  ],
   credentials: true
 };
+
 app.use(cors(corsOptions));
 // routes
 app.get("/", (req, res) => {
