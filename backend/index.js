@@ -19,7 +19,7 @@ const corsOptions = {
   origin: "https://netflix-repo-3vpc.vercel.app",
   credentials: true
 };
-
+app.use(cors(corsOptions));
 // routes
 app.get("/", (req, res) => {
     res.send("API is running...");
