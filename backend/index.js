@@ -15,13 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({
-    origin: [
-        "http://localhost:3000",
-        "https://your-frontend.vercel.app"
-    ],
-    credentials: true
-}));
+const corsOptions = {
+  origin: "https://netflix-repo-3vpc.vercel.app",
+  credentials: true
+};
 
 // routes
 app.get("/", (req, res) => {
