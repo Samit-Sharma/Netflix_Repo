@@ -1,8 +1,8 @@
 // import axios from "axios";
 
-// const api = axios.create({
-//   baseURL: "https://netflix-repo.onrender.com",
-//   withCredentials: true
-// });
+const api = axios.create({
+  baseURL: "https://netflix-repo.onrender.com",
+  withCredentials: true
+});
 
-// export default api;
+export default api;
