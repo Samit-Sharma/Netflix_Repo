@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://YOUR-BACKEND.onrender.com",
+  baseURL: "https://netflix-repo.onrender.com",
   withCredentials: true
 });
 
