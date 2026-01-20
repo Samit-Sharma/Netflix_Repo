@@ -21,11 +21,10 @@ const Browse = () => {
     useTopRatedMovies();
     useUpcomingMovies();
 
-    useEffect(() => {
-        if (!user) {
-            navigate("/");
-        }
-    }, []);
+   useEffect(() => {
+  if (!user) navigate("/login");
+}, [user, navigate]);
+
     return (
         <div >
             <Header />
