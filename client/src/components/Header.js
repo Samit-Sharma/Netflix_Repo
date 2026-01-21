@@ -15,14 +15,20 @@ const Header = () => {
     const navigate = useNavigate();
 
     const logoutHandler = async () => {
-        dispatch(setUser(null));
-        navigate("/");
         try {
-            await axios.get(`${API_END_POINT}/logout`, {
+            dispatch(setUser(null));
+            navigate("/");
+            // Call logout API in background without waiting
+            axios.get(`${API_END_POINT}/logout`, {
                 withCredentials: true
+            }).catch(err => {
+                // Silently catch any errors - logout UI is already done
+                console.log("Logout API call completed (error ignored)");
             });
         } catch (error) {
-            console.log("Logout API error:", error);
+            console.log("Logout handler error:", error);
+            dispatch(setUser(null));
+            navigate("/");
         }
     }
 
