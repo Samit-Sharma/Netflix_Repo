@@ -19,5 +19,6 @@ export const options = {
   headers: {
     accept: "application/json",
     Authorization: `Bearer ${process.env.REACT_APP_TMDB_TOKEN}`
-  }
-};
+  },
+  timeout: 15000 // 15 second timeout for TMDB API
+}
