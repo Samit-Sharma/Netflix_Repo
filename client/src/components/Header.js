@@ -16,7 +16,7 @@ const Header = () => {
 
     const logoutHandler = async () => {
         try {
-            const res = await axios.get(`${API_END_POINT}/user/logout`, {
+            const res = await axios.get(`${API_END_POINT}/logout`, {
                 withCredentials: true
             });
             if(res.data.success){

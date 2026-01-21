@@ -16,7 +16,7 @@ const SearchMovie = () => {
         e.preventDefault();
         dispatch(setLoading(true));
         try {
-            const res = await axios.get(`${SEARCH_MOVIE_URL}${searchMovie}&include_adult=false&language=en-US&page=1`, options);
+            const res = await axios.get(`${SEARCH_MOVIE_URL}query=${searchMovie}&include_adult=false&language=en-US&page=1`, options);
             const movies = res?.data?.results;
             dispatch(setSearchMovieDetails({ searchMovie, movies }));
         } catch (error) {
