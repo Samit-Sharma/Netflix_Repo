@@ -14,13 +14,22 @@ const SearchMovie = () => {
     
     const submitHandler = async (e) => {
         e.preventDefault();
+        if (!searchMovie.trim()) {
+            alert("Please enter a movie name");
+            return;
+        }
         dispatch(setLoading(true));
         try {
             const res = await axios.get(`${SEARCH_MOVIE_URL}query=${searchMovie}&include_adult=false&language=en-US&page=1`, options);
             const movies = res?.data?.results;
-            dispatch(setSearchMovieDetails({ searchMovie, movies }));
+            if (movies && movies.length > 0) {
+                dispatch(setSearchMovieDetails({ searchMovie, movies }));
+            } else {
+                alert("No movies found");
+            }
         } catch (error) {
-            console.log(error);
+            console.log("Search error:", error);
+            alert("Search failed: " + (error.response?.data?.message || error.message));
         } finally {
             dispatch(setLoading(false));
         }

@@ -9,7 +9,7 @@ export const Popular_Movie = `${TMDB_BASE_URL}/movie/popular`;
 export const Top_Rated_Movie = `${TMDB_BASE_URL}/movie/top_rated`;
 export const Upcoming_Movie = `${TMDB_BASE_URL}/movie/upcoming`;
 
-export const SEARCH_MOVIE_URL = `${TMDB_BASE_URL}/search/movie`;
+export const SEARCH_MOVIE_URL = `${TMDB_BASE_URL}/search/movie?`;
 
 export const TMDB_IMG_URL = "https://image.tmdb.org/t/p/w500";
 
