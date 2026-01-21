@@ -15,19 +15,14 @@ const Header = () => {
     const navigate = useNavigate();
 
     const logoutHandler = async () => {
+        dispatch(setUser(null));
+        navigate("/");
         try {
-            const res = await axios.get(`${API_END_POINT}/logout`, {
+            await axios.get(`${API_END_POINT}/logout`, {
                 withCredentials: true
             });
-            if(res.data.success){
-                toast.success(res.data.message);
-            }
-            dispatch(setUser(null));
-            navigate("/");
         } catch (error) {
-            const errorMessage = error.response?.data?.message || error.message || "Logout failed";
-            toast.error(errorMessage);
-            console.log(error);
+            console.log("Logout API error:", error);
         }
     }
 
