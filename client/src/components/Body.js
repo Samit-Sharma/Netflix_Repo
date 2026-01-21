@@ -11,8 +11,16 @@ const Body = () => {
             element: <Login />
         },
         {
+            path: "/login",
+            element: <Login />
+        },
+        {
             path: "/browse",
             element: <Browse />
+        },
+        {
+            path: "*",
+            element: <Login />
         }
     ])
     return (

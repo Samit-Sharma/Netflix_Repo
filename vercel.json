@@ -1,19 +1,10 @@
 {
-  "builds": [
+  "buildCommand": "npm run build --prefix client",
+  "outputDirectory": "client/build",
+  "rewrites": [
     {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "client/build/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
-
-  
 }
