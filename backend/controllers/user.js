@@ -51,18 +51,25 @@ export const Login = async (req, res) => {
 }
 
 export const Logout = async (req, res) => {
-    res.status(200)
-        .cookie("token", "", {
-            httpOnly: true,
-            secure: true,
-            sameSite: "None",
-            expires: new Date(0)
-        })
-        .json({
-            message: "User logged out successfully.",
-            success: true
+    try {
+        return res.status(200)
+            .cookie("token", "", {
+                httpOnly: true,
+                secure: true,
+                sameSite: "None",
+                maxAge: 0
+            })
+            .json({
+                message: "User logged out successfully.",
+                success: true
+            });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: "Error logging out",
+            success: false
         });
-
+    }
 }
 
 export const Register = async (req, res) => {
